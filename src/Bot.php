@@ -28,7 +28,7 @@ class Bot
 
     public function template(string $type, string $message, array $elements, array $config = [])
     {
-        $type = $this->load($type . 'Template', 'CodeBot\TemplatesMessage');
+        $type = $this->load($type . 'Template', 'CodeBot\Message\TemplatesMessage');
 
         foreach ($config as $method => $params) {
             call_user_func_array([$type, $method], $params);
